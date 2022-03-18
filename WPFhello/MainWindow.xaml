@@ -1,0 +1,32 @@
+﻿<Window x:Class="WPFhello.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFhello"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="329" Width="516"
+         Closing="Window_Closing" >
+    <Grid Margin="0,0,0,-6">
+        <Label x:Name="Hello_label" Content="Hello, WPF!" HorizontalAlignment="Left" Height="77" Margin="10,10,0,0" VerticalAlignment="Top" Width="322" FontSize="48" FontFamily="Comic Sans MS" RenderTransformOrigin="0.51,0.558" HorizontalContentAlignment="Left" FontWeight="Bold"/>
+        <GroupBox x:Name="gbUser" HorizontalAlignment="Left" Height="142" Margin="7,82,0,0" VerticalAlignment="Top" Width="348" RenderTransformOrigin="0.5,0.5">
+            <Grid  x:Name="MainGrid"  Height="114" Margin="0,0,144,0">
+                <Label x:Name="lblName" Content="Име:" HorizontalAlignment="Left" Height="35"  VerticalAlignment="Top" Width="39" Margin="0,2,0,0"/>
+                <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="21"  TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="44,7,0,0"/>
+                <TextBox x:Name="txtName1" HorizontalAlignment="Left" Height="21"  TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="44,33,0,0"/>
+                <TextBox x:Name="txtName2" HorizontalAlignment="Left" Height="21"  TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="44,57,0,0"/>
+                <Button x:Name="btnHello" Content="Здрасти!" HorizontalAlignment="Left" Height="26" Margin="100,83,0,0" VerticalAlignment="Top" Width="78" Click="btnHello_Click"/>
+                <Label x:Name="lblName_Copy" Content="Име:" HorizontalAlignment="Left" Height="35"  VerticalAlignment="Top" Width="39" Margin="0,28,0,0"/>
+                <Label x:Name="lblName_Copy1" Content="Име:" HorizontalAlignment="Left" Height="35"  VerticalAlignment="Top" Width="39" Margin="0,54,0,0"/>
+
+            </Grid>
+        </GroupBox>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Background="Bisque" TextWrapping="Wrap" Text="Hello, XAML!" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial Black" Margin="204,160,0,0">
+        I edit XAML myself!
+        </TextBlock>
+        <Button HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="70" Click="Button_Click">
+            Click me!
+        </Button>
+    </Grid>
+</Window>
