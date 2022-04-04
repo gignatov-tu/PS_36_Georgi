@@ -7,7 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserLogin", "UserLogin\User
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentInfoSystem", "StudentInfoSystem\StudentInfoSystem.csproj", "{E648E1C9-2377-47F1-9D50-76B92652F5D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFhello", "WPFhello\WPFhello.csproj", "{38EFC5AF-B7C3-487E-8347-F57D695A024C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFhello", "WPFhello\WPFhello.csproj", "{38EFC5AF-B7C3-487E-8347-F57D695A024C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseIt", "ExpenseIt\ExpenseIt.csproj", "{EE3FEA09-181B-4BC7-AC3A-4E929667AC53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExample", "WpfExample\WpfExample.csproj", "{E8415C59-7FA4-406C-8BC4-8A9D020B5DCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMVVM", "EasyMVVM\EasyMVVM.csproj", "{DFE95008-CBC9-4084-A88A-FEC9E6C5B48C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{38EFC5AF-B7C3-487E-8347-F57D695A024C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38EFC5AF-B7C3-487E-8347-F57D695A024C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38EFC5AF-B7C3-487E-8347-F57D695A024C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE3FEA09-181B-4BC7-AC3A-4E929667AC53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE3FEA09-181B-4BC7-AC3A-4E929667AC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE3FEA09-181B-4BC7-AC3A-4E929667AC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE3FEA09-181B-4BC7-AC3A-4E929667AC53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8415C59-7FA4-406C-8BC4-8A9D020B5DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8415C59-7FA4-406C-8BC4-8A9D020B5DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8415C59-7FA4-406C-8BC4-8A9D020B5DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8415C59-7FA4-406C-8BC4-8A9D020B5DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFE95008-CBC9-4084-A88A-FEC9E6C5B48C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE95008-CBC9-4084-A88A-FEC9E6C5B48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFE95008-CBC9-4084-A88A-FEC9E6C5B48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE95008-CBC9-4084-A88A-FEC9E6C5B48C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

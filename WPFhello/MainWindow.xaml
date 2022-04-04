@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFhello"
         mc:Ignorable="d"
-        Title="MainWindow" Height="329" Width="516"
+        Title="MainWindow" Height="400" Width="520"
          Closing="Window_Closing" >
     <Grid Margin="0,0,0,-6">
-        <Label x:Name="Hello_label" Content="Hello, WPF!" HorizontalAlignment="Left" Height="77" Margin="10,10,0,0" VerticalAlignment="Top" Width="322" FontSize="48" FontFamily="Comic Sans MS" RenderTransformOrigin="0.51,0.558" HorizontalContentAlignment="Left" FontWeight="Bold"/>
-        <GroupBox x:Name="gbUser" HorizontalAlignment="Left" Height="142" Margin="7,82,0,0" VerticalAlignment="Top" Width="348" RenderTransformOrigin="0.5,0.5">
-            <Grid  x:Name="MainGrid"  Height="114" Margin="0,0,144,0">
+        <Label x:Name="Hello_label" Content="Hello, WPF!" HorizontalAlignment="Left" Height="77" Margin="10,10,0,0" VerticalAlignment="Top" Width="320" FontSize="48" FontFamily="Comic Sans MS" RenderTransformOrigin="0.51,0.558" HorizontalContentAlignment="Left" FontWeight="Bold"/>
+        <GroupBox x:Name="gbUser" HorizontalAlignment="Left" Height="140" Margin="7,80,0,0" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5">
+            <Grid  x:Name="MainGrid"  Height="120" Margin="0,0,0,0">
                 <Label x:Name="lblName" Content="Име:" HorizontalAlignment="Left" Height="35"  VerticalAlignment="Top" Width="39" Margin="0,2,0,0"/>
                 <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="21"  TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="44,7,0,0"/>
                 <TextBox x:Name="txtName1" HorizontalAlignment="Left" Height="21"  TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="44,33,0,0"/>
@@ -28,5 +28,12 @@
         <Button HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="70" Click="Button_Click">
             Click me!
         </Button>
+        <ListBox x:Name="peopleListBox" HorizontalAlignment="Right" Height="120" Margin="0,80,7,0" VerticalAlignment="Top" Width="100" SelectionChanged="peopleListBox_SelectionChanged">
+            <ListBoxItem Content="Mike"/>
+            <ListBoxItem Content="Lisa"/>
+            <ListBoxItem Content="John"/>
+            <ListBoxItem Content="Mary"/>
+        </ListBox>
+        <Button x:Name="btn_greeting" Content="Greeting" HorizontalAlignment="Right" Height="30" Margin="0,205,7,0" VerticalAlignment="Top" Width="100" Click="btn_greeting_Click"/>
     </Grid>
 </Window>
