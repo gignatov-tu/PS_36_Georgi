@@ -8,6 +8,7 @@ namespace StudentInfoSystem
 {
     public class Student
     {
+        public int StudentId { get; set; }
         public string name { get; set; }
         public string surname { get; set; }
         public string lastName { get; set; }
@@ -19,5 +20,6 @@ namespace StudentInfoSystem
         public string year { get; set; }
         public string stream { get; set; }
         public string group { get; set; }
+        public byte[] Photo { get; set; }
     }
 }

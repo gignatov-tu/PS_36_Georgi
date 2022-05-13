@@ -8,13 +8,14 @@
         Title="Студентска информационна система" Height="400" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <GroupBox x:Name="gbImage" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Header="Снимка" Height="230" Width="200">
+        <GroupBox x:Name="gbImage" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Header="Снимка" Height="230" Width="200">
             <Image x:Name="imgStudent" Height="200" Width="150"/>
         </GroupBox>
-        <GroupBox Grid.Column="1" x:Name="gbName" HorizontalAlignment="Center" Height="120" Header="Лични данни" Margin="0,0,5,0" VerticalAlignment="Top" Width="540">
+        <GroupBox Grid.Column="2" x:Name="gbName" HorizontalAlignment="Left" Height="120" Header="Лични данни" VerticalAlignment="Top" Width="540">
             <Grid>
                 <Label x:Name="lblName" Content="Име:" HorizontalAlignment="Left" Height="30" Margin="10,5,0,0" Width="100" VerticalAlignment="Top"/>
                 <Label x:Name="lblSurname" Content="Презиме:" HorizontalAlignment="Left" Height="30" Margin="10,35,0,0" Width="100" VerticalAlignment="Top"/>
@@ -24,7 +25,7 @@
                 <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="20" Margin="110,70,0,0" VerticalAlignment="Top" Width="250"/>
             </Grid>
         </GroupBox>
-        <GroupBox Grid.Column="1" x:Name="gbInfo" HorizontalAlignment="Center" Height="180" Header="Студентска информация" Margin="0,130,5,0" VerticalAlignment="Top" Width="540">
+        <GroupBox Grid.Column="2" x:Name="gbInfo" HorizontalAlignment="Left" Height="180" Header="Студентска информация" Margin="0,130,0,0" VerticalAlignment="Top" Width="540">
             <Grid>
                 <Label x:Name="lblFaculty" Content="Факултет:" HorizontalAlignment="Left" Height="30" Margin="10,5,0,0" Width="100" VerticalAlignment="Top"/>
                 <Label x:Name="lblMajor" Content="Специалност:" HorizontalAlignment="Left" Height="30" Margin="10,35,0,0" Width="100" VerticalAlignment="Top"/>
@@ -34,7 +35,7 @@
                 <TextBox x:Name="txtFaculty" HorizontalAlignment="Left" Height="20" Margin="110,10,0,0" VerticalAlignment="Top" Width="250"/>
                 <TextBox x:Name="txtMajor" HorizontalAlignment="Left" Height="20" Margin="110,40,0,0" VerticalAlignment="Top" Width="250"/>
                 <TextBox x:Name="txtDegree" HorizontalAlignment="Left" Height="20" Margin="110,70,0,0" VerticalAlignment="Top" Width="250"/>
-                <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="20" Margin="110,100,0,0" VerticalAlignment="Top" Width="250"/>
+                <ListBox x:Name="listStatus" HorizontalAlignment="Left" Height="20" Margin="110,100,0,0" VerticalAlignment="Top" Width="250" ItemsSource="{Binding StudStatusChoices}"/>
                 <TextBox x:Name="txtFacNum" HorizontalAlignment="Left" Height="20" Margin="110,130,0,0" VerticalAlignment="Top" Width="250"/>
                 <Label x:Name="lblYear" Content="Курс:" HorizontalAlignment="Left" Height="30" Margin="400,5,0,0" Width="100" VerticalAlignment="Top"/>
                 <Label x:Name="lblStream" Content="Поток:" HorizontalAlignment="Left" Height="30" Margin="400,35,0,0" Width="100" VerticalAlignment="Top"/>
@@ -44,8 +45,9 @@
                 <TextBox x:Name="txtGroup" HorizontalAlignment="Left" Height="20" Margin="460,70,0,0" VerticalAlignment="Top" Width="60"/>
             </Grid>
         </GroupBox>
-        <Button Grid.Column="1"  x:Name="btnClear" Content="Изчисти" HorizontalAlignment="Right" Height="30" Margin="0,320,300,0" VerticalAlignment="Top" Width="80" Cursor="Hand" Click="btnClear_Click"/>
-        <Button Grid.Column="1"  x:Name="btnBlock" Content="Блокиране" HorizontalAlignment="Right" Height="30" Margin="0,320,200,0" VerticalAlignment="Top" Width="80" Cursor="Hand" Click="btnBlock_Click"/>
-        <Button Grid.Column="1"  x:Name="btnEnable" Content="Активиране" HorizontalAlignment="Right" Height="30" Margin="0,320,100,0" VerticalAlignment="Top" Width="80" Cursor="Hand" Click="btnEnable_Click"/>
+        <Button Grid.Column="2"  x:Name="btnClear" Content="Изчисти" HorizontalAlignment="Right" Height="30" Margin="0,320,300,0" VerticalAlignment="Top" Width="80" Cursor="Hand" Click="btnClear_Click"/>
+        <Button Grid.Column="2"  x:Name="btnBlock" Content="Блокиране" HorizontalAlignment="Right" Height="30" Margin="0,320,200,0" VerticalAlignment="Top" Width="80" Cursor="Hand" Click="btnBlock_Click"/>
+        <Button Grid.Column="2"  x:Name="btnEnable" Content="Активиране" HorizontalAlignment="Right" Height="30" Margin="0,320,100,0" VerticalAlignment="Top" Width="80" Cursor="Hand" Click="btnEnable_Click"/>
+        <Button Grid.Column="2"  x:Name="btnTest" Content="Тест" HorizontalAlignment="Right" Height="30" Margin="0,320,400,0" VerticalAlignment="Top" Width="80" Cursor="Hand" Click="btnTest_Click"/>
     </Grid>
 </Window>

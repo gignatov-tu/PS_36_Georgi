@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace StudentInfoSystem
 {
@@ -20,12 +22,53 @@ namespace StudentInfoSystem
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<TextBox> TextBoxes = new List<TextBox>();
+        public List<string> StudStatusChoices { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            FillStudStatusChoices();
+            this.DataContext = this;
         }
 
-        private List<TextBox> TextBoxes = new List<TextBox>();
+        private void CopyTestStudents()
+        {
+            StudentInfoContext context = new StudentInfoContext();
+            foreach (Student st in StudentData.TestStudents)
+            {
+                context.Students.Add(st);
+                context.SaveChanges();
+            }
+        }
+        private bool TestStudentsIfEmpty()
+        {
+            StudentInfoContext context = new StudentInfoContext();
+            IEnumerable<Student> queryStudents = context.Students;
+            int countStudents = queryStudents.Count();
+            if (countStudents == 0) return true;
+            else return false;
+        }
+        private void FillStudStatusChoices()
+        {
+            StudStatusChoices = new List<string>();
+            using (IDbConnection connection = new SqlConnection(Properties.Settings.Default.DbConnect))
+            {
+                string sqlquery = @"SELECT StatusDescr FROM StudStatus";
+                IDbCommand command = new SqlCommand();
+                command.Connection = connection;
+                connection.Open();
+                command.CommandText = sqlquery;
+                IDataReader reader = command.ExecuteReader();
+                bool notEndOfResult;
+                notEndOfResult = reader.Read();
+                while (notEndOfResult)
+                {
+                    string s = reader.GetString(0);
+                    StudStatusChoices.Add(s);
+                    notEndOfResult = reader.Read();
+                }
+            }
+        }
         private void GetTextBoxList()
         {
             TextBoxes.Add(txtName);
@@ -34,7 +77,7 @@ namespace StudentInfoSystem
             TextBoxes.Add(txtFaculty);
             TextBoxes.Add(txtMajor);
             TextBoxes.Add(txtDegree);
-            TextBoxes.Add(txtStatus);
+            //TextBoxes.Add(txtStatus);
             TextBoxes.Add(txtFacNum);
             TextBoxes.Add(txtYear);
             TextBoxes.Add(txtStream);
@@ -67,7 +110,7 @@ namespace StudentInfoSystem
             txtFaculty.Text = student.faculty;
             txtMajor.Text = student.major;
             txtDegree.Text = student.degree;
-            txtStatus.Text = student.status;
+            //txtStatus.Text = student.status;
             txtFacNum.Text = student.facultyNumber;
             txtYear.Text = student.year;
             txtStream.Text = student.stream;
@@ -123,6 +166,11 @@ namespace StudentInfoSystem
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             ClearText();
+        }
+        private void btnTest_Click(object sender, RoutedEventArgs e)
+        {
+            if (TestStudentsIfEmpty())
+                CopyTestStudents();
         }
     }
 }

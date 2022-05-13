@@ -31,7 +31,13 @@ namespace UserLogin
 
         public static User IsUserPassCorrect(String username, String password)
         {
-            return (from user in TestUsers where user.Username == username && user.Password == password select user).First();
+            UserContext context = new UserContext();
+
+            User result =
+            (from us in context.Users
+             where (us.Username == username && us.Password == password)
+             select us).First();
+            return result;
         }
 
         public static void SetUserActiveTo(string username, DateTime date)
